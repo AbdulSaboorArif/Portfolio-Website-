@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "web-search": {
+      "source": "brave/brave-search-skills",
+      "sourceType": "github",
+      "computedHash": "d32a0e1aad4f1df0c8e9e869dad47450295ee07ff5a9dd2dd892422a9937eef3"
+    }
+  }
+}

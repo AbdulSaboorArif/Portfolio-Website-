@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  [data-theme="dark"] {
+    --bg-base: #0E132C;
+    --bg-surface: #0E132C;
+    --bg-elevated: #0E132C;
+    --bg-border: #0E132C;
+
+    --color-primary: #3B82F6;
+    --color-cyan: #06B6D4;
+    --color-purple: #8B5CF6;
+    --color-green: #10B981;
+    --color-amber: #F59E0B;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+
+    --glow-primary: rgba(59, 130, 246, 0.18);
+    --glow-cyan: rgba(6, 182, 212, 0.18);
+    --shadow-primary: 0 0 40px rgba(59, 130, 246, 0.18);
+  }
+
+  [data-theme="light"] {
+    --bg-base: #FFFFFF;
+    --bg-surface: #F9FAFB;
+    --bg-elevated: #F3F4F6;
+    --bg-border: #E5E7EB;
+
+    --color-primary: #3B82F6;
+    --color-cyan: #06B6D4;
+    --color-purple: #8B5CF6;
+    --color-green: #10B981;
+    --color-amber: #F59E0B;
+
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+
+    --glow-primary: rgba(59, 130, 246, 0.12);
+    --glow-cyan: rgba(6, 182, 212, 0.12);
+    --shadow-primary: 0 0 30px rgba(59, 130, 246, 0.12);
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /**
+   * Smooth Theme Transitions
+   * All elements with color/background will smoothly transition
+   * between light and dark modes (300ms duration)
+   */
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  /**
+   * Respect user's motion preferences
+   * If they prefer reduced motion, disable animations and transitions
+   */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Light mode background (default) */
+  body {
+    background: #ffffff;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    color: #111827;
+  }
+
+  /* Dark mode background */
+  .dark body {
+    background-color: #0f172a;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-surface);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-cyan);
+    border-radius: 5px;
+  }
+}
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: var(--text-primary);
+  }
+
+  *:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-primary) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-cyan) 100%);
+  }
+
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-primary) 100%);
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--glow-primary) 0%, transparent 70%);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .glow-hover {
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 40px var(--glow-primary);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  [data-theme="light"] .dot-grid {
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.12) 1px, transparent 1px);
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes rotate-360 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(34, 211, 238, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .hover\:rotate-360:hover {
+    animation: rotate-360 0.6s ease-in-out;
+  }
+}
