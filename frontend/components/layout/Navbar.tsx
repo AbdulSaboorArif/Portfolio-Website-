@@ -83,7 +83,6 @@ export default function Navbar() {
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-2">
             {/* Theme Toggle Button - Only render after component mounts to prevent hydration issues */}
-            {mounted && ()}
 
             {/* Mobile Menu Toggle Button */}
             <button
