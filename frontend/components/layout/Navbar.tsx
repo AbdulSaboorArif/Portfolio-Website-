@@ -83,21 +83,7 @@ export default function Navbar() {
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-2">
             {/* Theme Toggle Button - Only render after component mounts to prevent hydration issues */}
-            {mounted && (
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors duration-200"
-                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-                title={`Current theme: ${theme}`}
-              >
-                {/* Show Sun icon in dark mode, Moon icon in light mode */}
-                {theme === 'dark' ? (
-                  <Sun size={20} className="transition-transform duration-300" />
-                ) : (
-                  <Moon size={20} className="transition-transform duration-300" />
-                )}
-              </button>
-            )}
+            {mounted && ()}
 
             {/* Mobile Menu Toggle Button */}
             <button
