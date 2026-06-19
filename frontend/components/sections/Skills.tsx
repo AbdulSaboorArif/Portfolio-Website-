@@ -21,7 +21,7 @@ const SKILL_CATEGORIES = [
   {
     number: '04',
     title: 'DevOps',
-    skills: ['Docker', 'Git', 'GitHub', 'Deployment', 'CI/CD'],
+    skills: ['Docker', 'Deployment', 'CI/CD'],
   },
 ];
 
@@ -36,13 +36,12 @@ const SKILLS_WITH_PERCENTAGES = [
   { name: 'OpenAI Agents', percentage: 88 },
   { name: 'Claude Agents', percentage: 90 },
   { name: 'Docker', percentage: 80 },
-  { name: 'Git', percentage: 92 },
   { name: 'n8n', percentage: 85 },
 ];
 
 const TECH_MARQUEE = [
   'Next.js', 'React', 'TypeScript', 'Python', 'FastAPI', 'MySQL',
-  'Tailwind CSS', 'Framer Motion', 'Docker', 'Git', 'OpenAI',
+  'Tailwind CSS', 'Framer Motion', 'Docker', 'OpenAI',
   'Claude', 'n8n', 'RAG', 'OpenClaw', 'GSAP'
 ];
 
