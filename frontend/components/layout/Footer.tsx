@@ -6,7 +6,7 @@ import { MapPin, Mail } from 'lucide-react';
 const PERSONAL_INFO = {
   name: 'Abdul Saboor Arif',
   location: 'Karachi, Sindh, Pakistan',
-  email: 'contact@abdulsaboor.dev',
+  email: 'saboorarif0329@gmail.com',
   github: 'https://github.com/AbdulSaboorArif',
   linkedin: 'https://www.linkedin.com/in/abdulsaboor-arif/',
 };
