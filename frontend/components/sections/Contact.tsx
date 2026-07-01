@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { MapPin, Mail, Send, CheckCircle, XCircle } from 'lucide-react';
 
 const PERSONAL_INFO = {
-  email: 'abdulsaboorarif@gmail.com',
+  email: 'abdulsaboorarif73@gmail.com',
   location: 'Karachi, Sindh, Pakistan',
   github: 'https://github.com/AbdulSaboorArif',
   linkedin: 'https://www.linkedin.com/in/abdulsaboor-arif/',
